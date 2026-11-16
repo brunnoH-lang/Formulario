@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Inscripci&oacute;n al CBTis No. 5</title>
+    <style>
+        :root {
+            --cbtis-guinda: #691C32;
+            --cbtis-guinda-oscuro: #4D1223;
+            --cbtis-dorado: #C5A059;
+            --bg-gris: #F0F2F5;
+            --texto-principal: #2D3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-gris);
+            color: var(--texto-principal);
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border-top: 6px solid var(--cbtis-dorado);
+        }
+
+        .header {
+            background-color: var(--cbtis-guinda);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header p.subhead {
+            font-size: 13px;
+            color: var(--cbtis-dorado);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .welcome-text {
+            background-color: #FFF9E6;
+            border-left: 4px solid var(--cbtis-dorado);
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        fieldset {
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #FAFAFA;
+        }
+
+        legend {
+            font-weight: bold;
+            color: var(--cbtis-guinda);
+            padding: 0 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #4A5568;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            padding: 9px 12px;
+            border: 1px solid #CBD5E0;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--cbtis-guinda);
+            box-shadow: 0 0 0 3px rgba(105, 28, 50, 0.15);
+        }
+
+        .input-btn-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .input-btn-group input {
+            flex: 1;
+        }
+
+        .btn-inline {
+            background-color: var(--cbtis-dorado);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-inline:hover {
+            background-color: #b08d48;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding-top: 5px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .counter-badge {
+            display: inline-block;
+            background: var(--cbtis-guinda);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-confirmar {
+            background-color: var(--cbtis-guinda);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 6px rgba(105, 28, 50, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-confirmar:hover {
+            background-color: var(--cbtis-guinda-oscuro);
+        }
+
+        .table-container {
+            margin-top: 35px;
+            overflow-x: auto;
+        }
+
+        h2 {
+            color: var(--cbtis-guinda);
+            border-bottom: 2px solid var(--cbtis-dorado);
+            padding-bottom: 6px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        th, td {
+            border: 1px solid #E2E8F0;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--cbtis-guinda);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F7FAFC;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <p class="subhead">DGETI &mdash; Centro de Bachillerato Tecnol&oacute;gico industrial y de servicios</p>
+        <h1>Inscripci&oacute;n al CBTis No. 5</h1>
+    </div>
+
+    <div class="content">
+        <p class="welcome-text">
+            Bienvenido al CBTis No. 5, ingresa los datos y presiona el bot&oacute;n de confirmar para acumular tus 5 registros.
+        </p>
+        
+        <span id="contadorRegistros" class="counter-badge">Registros ingresados: 0 / 5</span>
+
+        <!-- QUITAMOS EL ONSUBMIT Y USAMOS UN DIV NORMAL CON EL BOTÓN PARA EVITAR BLOQUEOS DEL NAVEGADOR -->
+        <div id="formInscripcion">
+            
+            <fieldset>
+                <legend>DATOS DEL ASPIRANTE</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="apellidoPaterno">Apellido paterno:</label>
+                        <input type="text" id="apellidoPaterno">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombres">Nombre (s):</label>
+                        <input type="text" id="nombres">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="curp">CURP:</label>
+                        <input type="text" id="curp" maxlength="18" style="text-transform: uppercase;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                        <input type="date" id="fechaNacimiento">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Sexo:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="sexo" value="Femenino"> Femenino</label>
+                            <label><input type="radio" name="sexo" value="Masculino"> Masculino</label>
+                            <label><input type="radio" name="sexo" value="Otro"> otro</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lugarNacimiento">Lugar de nacimiento:</label>
+                        <input type="text" id="lugarNacimiento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular">N&uacute;mero de celular:</label>
+                        <input type="tel" id="celular" placeholder="10 d&iacute;gitos">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="correo">Correo electr&oacute;nico:</label>
+                        <input type="email" id="correo">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>DATOS ACAD&Eacute;MICOS</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="secundaria">Secundaria:</label>
+                        <input type="text" id="secundaria">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cct">CCT:</label>
+                        <input type="text" id="cct" style="text-transform: uppercase;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="promedio">Promedio:</label>
+                        <input type="number" id="promedio" step="0.01" min="0" max="10">
+                    </div>
+
+                    <!-- CAMPO DE AÑO DE EGRESO CON SU BOTÓN ESPECÍFICO -->
+                    <div class="form-group">
+                        <label for="anioEgreso">A&ntilde;o de egreso:</label>
+                        <div class="input-btn-group">
+                            <input type="number" id="anioEgreso" min="2000" max="2026" placeholder="Ej. 2026">
+                            <button type="button" class="btn-inline" onclick="fijarAnio()">Fijar A&ntilde;o</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Turno:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="turno" value="Matutino"> Matutino</label>
+                            <label><input type="radio" name="turno" value="Vespertino"> Vespertino</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>&iquest;Estuvo inscrito en otra instituci&oacute;n de educaci&oacute;n media superior?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="otraInstitucion" value="si"> S&iacute;</label>
+                            <label><input type="radio" name="otraInstitucion" value="No"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="carrera">Carreras:</label>
+                        <select id="carrera">
+                            <option value="Programaci&oacute;n" selected>Programaci&oacute;n</option>
+                            <option value="Ofim&aacute;tica">Ofim&aacute;tica</option>
+                            <option value="Electricidad">Electricidad</option>
+                            <option value="Construcci&oacute;n">Construcci&oacute;n</option>
+                            <option value="Contabilidad">Contabilidad</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- BOTÓN PRINCIPAL DE CONFIRMAR -->
+            <div class="btn-container">
+                <button type="button" class="btn-confirmar" id="btnConfirmar" onclick="confirmarRegistro()">Confirmar Registro</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h2>Registros Ingresados (M&aacute;ximo 5)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre Completo</th>
+                        <th>CURP</th>
+                        <th>Celular</th>
+                        <th>Carrera</th>
+                        <th>Promedio</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaRegistros">
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: #777;">A&uacute;n no hay registros agregados.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    let registros = [];
+    const maxRegistros = 5;
+
+    function fijarAnio() {
+        const anio = document.getElementById('anioEgreso').value;
+        if (!anio) {
+            alert("Escribe primero el año de egreso.");
+            return;
+        }
+        alert("¡Año de egreso (" + anio + ") fijado correctamente!");
+    }
+
+    function confirmarRegistro() {
+        if (registros.length >= maxRegistros) {
+            alert("Ya se han completado los 5 registros requeridos.");
+            return;
+        }
+
+        const apellidoPaterno = document.getElementById('apellidoPaterno').value || "Sin apellido";
+        const nombres = document.getElementById('nombres').value || "Sin nombre";
+        const curp = (document.getElementById('curp').value || "S/N").toUpperCase();
+        const celular = document.getElementById('celular').value || "S/N";
+        const carrera = document.getElementById('carrera').value;
+        const promedio = document.getElementById('promedio').value || "0";
+
+        registros.push({
+            nombreCompleto: `${nombres} ${apellidoPaterno}`,
+            curp: curp,
+            celular: celular,
+            carrera: carrera,
+            promedio: promedio
+        });
+
+        actualizarTabla();
+
+        // Limpiar campos manualmente
+        document.getElementById('apellidoPaterno').value = '';
+        document.getElementById('nombres').value = '';
+        document.getElementById('curp').value = '';
+        document.getElementById('fechaNacimiento').value = '';
+        document.getElementById('lugarNacimiento').value = '';
+        document.getElementById('celular').value = '';
+        document.getElementById('correo').value = '';
+        document.getElementById('secundaria').value = '';
+        document.getElementById('cct').value = '';
+        document.getElementById('promedio').value = '';
+        document.getElementById('anioEgreso').value = '';
+
+        if (registros.length === maxRegistros) {
+            const btn = document.getElementById('btnConfirmar');
+            btn.disabled = true;
+            btn.style.backgroundColor = '#A0AEC0';
+            btn.style.cursor = 'not-allowed';
+            alert("¡Excelente! Has registrado con éxito los 5 registros.");
+        } else {
+            alert("¡Registro confirmado! Faltan " + (maxRegistros - registros.length) + " registros.");
+        }
+    }
+
+    function actualizarTabla() {
+        const tbody = document.getElementById('tablaRegistros');
+        const contadorBadge = document.getElementById('contadorRegistros');
+        
+        contadorBadge.textContent = `Registros ingresados: ${registros.length} / 5`;
+
+        if (registros.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #777;">A&uacute;n no hay registros agregados.</td></tr>`;
+            return;
+        }
+
+        let html = '';
+        registros.forEach((reg, index) => {
+            html += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${reg.nombreCompleto}</td>
+                    <td>${reg.curp}</td>
+                    <td>${reg.celular}</td>
+                    <td>${reg.carrera}</td>
+                    <td>${reg.promedio}</td>
+                </tr>
+            `;
+        });
+        tbody.innerHTML = html;
+    }
+</script>
+
+</body>
+</html>

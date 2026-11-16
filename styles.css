@@ -1,0 +1,210 @@
+:root {
+    --cbtis-guinda: #691C32; /* Tonalidad institucional DGETI / CBTis */
+    --cbtis-guinda-oscuro: #4D1223;
+    --cbtis-dorado: #C5A059;
+    --bg-gris: #F0F2F5;
+    --texto-principal: #2D3748;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-gris);
+    color: var(--texto-principal);
+    padding: 20px 10px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border-top: 6px solid var(--cbtis-dorado);
+}
+
+/* Encabezado Institucional */
+.header {
+    background-color: var(--cbtis-guinda);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.header p.subhead {
+    font-size: 13px;
+    color: var(--cbtis-dorado);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.content {
+    padding: 30px;
+}
+
+.welcome-text {
+    background-color: #FFF9E6;
+    border-left: 4px solid var(--cbtis-dorado);
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    border-radius: 0 4px 4px 0;
+}
+
+fieldset {
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #FAFAFA;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--cbtis-guinda);
+    padding: 0 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #4A5568;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select {
+    padding: 9px 12px;
+    border: 1px solid #CBD5E0;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--cbtis-guinda);
+    box-shadow: 0 0 0 3px rgba(105, 28, 50, 0.15);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.counter-badge {
+    display: inline-block;
+    background: var(--cbtis-guinda);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: var(--cbtis-guinda);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 6px rgba(105, 28, 50, 0.3);
+}
+
+button:hover {
+    background-color: var(--cbtis-guinda-oscuro);
+}
+
+/* Tabla de registros */
+.table-container {
+    margin-top: 35px;
+    overflow-x: auto;
+}
+
+h2 {
+    color: var(--cbtis-guinda);
+    border-bottom: 2px solid var(--cbtis-dorado);
+    padding-bottom: 6px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+th, td {
+    border: 1px solid #E2E8F0;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--cbtis-guinda);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #F7FAFC;
+}
